@@ -11,23 +11,27 @@ export function AppRoutes() {
     <Navigator
       screenOptions={{
         headerShown: false,
-        tabBarLabelPosition: 'beside-icon',
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#363636',
+        tabBarStyle: {
+          borderTopWidth: 0,
+          backgroundColor: '#069',
+        },
       }}
     >
       <Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => <SimpleLineIcons name="notebook" size={24} color="black" />,
-          tabBarLabel: 'NoteBook',
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="notebook" size={30} color={color} />,
         }}
       />
       <Screen
         name="New"
         component={New}
         options={{
-          tabBarIcon: () => <SimpleLineIcons name="note" size={24} color="black" />,
-          tabBarLabel: 'NoteBook',
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="note" size={30} color={color} />,
         }}
       />
     </Navigator>
