@@ -5,7 +5,7 @@ import { Note } from '../components/Note';
 
 export function Home() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
       <Note />
     </View>
