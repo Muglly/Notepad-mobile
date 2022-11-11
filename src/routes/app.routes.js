@@ -24,14 +24,14 @@ export function AppRoutes() {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({ color }) => <SimpleLineIcons name="notebook" size={30} color={color} />,
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="notebook" size={24} color={color} />,
         }}
       />
       <Screen
         name="New"
         component={New}
         options={{
-          tabBarIcon: ({ color }) => <SimpleLineIcons name="note" size={30} color={color} />,
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="note" size={24} color={color} />,
         }}
       />
     </Navigator>
