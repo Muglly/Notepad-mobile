@@ -1,37 +1,26 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { Header } from '../components/Header';
+import { Input } from '../components/Input';
 
-export function New() {
+export function New(props) {
   return (
     <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
-      <TextInput style={styles.input}></TextInput>
+      <Input />
       <TouchableOpacity style={styles.btn}>
-        <TextInput style={styles.text}>Save</TextInput>
+        <Text style={styles.text}>Save</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  input: {
-    flex: 10,
-    backgroundColor: '#5BBEF0',
-    textAlignVertical: 'top',
-    margin: 10,
-    borderRadius: 5,
-    padding: 10,
-    color: '#363636',
-    fontSize: 16,
-    fontFamily: 'Regular',
-  },
-
   btn: {
     flex: 1,
     height: 10,
     margin: 10,
-    backgroundColor: '#054f77',
+    backgroundColor: '#009DCF',
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
