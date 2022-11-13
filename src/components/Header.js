@@ -19,5 +19,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontFamily: 'Medium',
+    marginTop: 15,
   },
 });

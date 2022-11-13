@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { Header } from '../components/Header';
 import { Card } from '../components/Card';
@@ -8,9 +8,6 @@ export function Home() {
   return (
     <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
-      <Card>
-        <Note />
-      </Card>
     </View>
   );
 }

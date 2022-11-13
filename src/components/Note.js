@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from 'react-native';
 
 export function Note() {
-  return <Text style={styles.annotation}>{props.notes}</Text>;
+  return <Text style={styles.annotation}></Text>;
 }
 
 const styles = StyleSheet.create({
