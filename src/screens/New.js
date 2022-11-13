@@ -1,20 +1,37 @@
 import { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
 import { Header } from '../components/Header';
-import { Input } from '../components/Input';
 
-export function New(props) {
+export function New() {
   const [isNote, setNote] = useState('');
 
   function handeleNoteCreate() {
-    alert(isNote);
+    if (!isNote.trim()) {
+      return alert('type your note');
+    }
+    try {
+      <View style={styles.card}>
+        <Text style={styles.annotation} value={isNote} />
+      </View>;
+
+      setNote('');
+      alert('Annotation created');
+    } catch (error) {
+      console.log(error);
+      alert('Unable to create your annotation.');
+    }
   }
 
   return (
     <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
-      <Input onChangeText={setNote} value={isNote} />
+      <TextInput
+        style={styles.input}
+        placeholder="whats your note?"
+        onChangeText={setNote}
+        value={isNote}
+      />
       <TouchableOpacity style={styles.btn} onPress={handeleNoteCreate}>
         <Text style={styles.text}>Save</Text>
       </TouchableOpacity>
@@ -37,5 +54,27 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontFamily: 'Medium',
+  },
+  input: {
+    flex: 10,
+    backgroundColor: '#5BBEF0',
+    textAlignVertical: 'top',
+    margin: 10,
+    borderRadius: 5,
+    padding: 10,
+    color: '#363636',
+    fontSize: 16,
+    fontFamily: 'Regular',
+  },
+  annotation: {
+    fontFamily: 'Regular',
+    fontSize: 15,
+    padding: 10,
+    color: '#fff',
+  },
+  card: {
+    margin: 10,
+    backgroundColor: '#5BBEF0',
+    borderRadius: 10,
   },
 });
