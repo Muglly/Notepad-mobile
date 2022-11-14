@@ -10,6 +10,7 @@ import {
 } from '@expo-google-fonts/roboto';
 
 import { Routes } from './src/routes';
+import { NoteContext } from './src/contexts/context';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -37,7 +38,9 @@ export default function App() {
 
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <Routes />
+      <NoteContext>
+        <Routes />
+      </NoteContext>
       <StatusBar style="auto" />
     </View>
   );

@@ -1,20 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
 import { Header } from '../components/Header';
 
+import { UserContext } from '../contexts/context';
+
 export function New() {
-  const [isNote, setNote] = useState('');
+  const { isNote, setNote } = useContext(UserContext);
 
   function handeleNoteCreate() {
     if (!isNote.trim()) {
       return alert('type your note');
     }
     try {
-      <View style={styles.card}>
-        <Text style={styles.annotation} value={isNote} />
-      </View>;
-
       setNote('');
       alert('Annotation created');
     } catch (error) {
@@ -65,16 +63,5 @@ const styles = StyleSheet.create({
     color: '#363636',
     fontSize: 16,
     fontFamily: 'Regular',
-  },
-  annotation: {
-    fontFamily: 'Regular',
-    fontSize: 15,
-    padding: 10,
-    color: '#fff',
-  },
-  card: {
-    margin: 10,
-    backgroundColor: '#5BBEF0',
-    borderRadius: 10,
   },
 });
