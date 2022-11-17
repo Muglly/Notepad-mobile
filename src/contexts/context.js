@@ -6,7 +6,7 @@ export const UserContext = createContext({
 });
 
 export const NoteContext = ({ children }) => {
-  const [isNote, setNote] = useState('Lucas');
+  const [isNote, setNote] = useState('');
 
   return <UserContext.Provider value={{ isNote, setNote }}>{children}</UserContext.Provider>;
 };

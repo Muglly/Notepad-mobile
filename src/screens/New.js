@@ -15,6 +15,7 @@ export function New() {
     try {
       setNote('');
       alert('Annotation created');
+      console.log(isNote);
     } catch (error) {
       console.log(error);
       alert('Unable to create your annotation.');

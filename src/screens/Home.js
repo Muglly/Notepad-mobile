@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 
 import { Header } from '../components/Header';
 
@@ -11,7 +11,7 @@ export function Home() {
   function handeleNoteCreate() {
     return (
       <View style={styles.card}>
-        <Text style={styles.annotation} value={isNote} />
+        <Text style={styles.annotation}> text</Text>
       </View>
     );
   }
@@ -19,7 +19,9 @@ export function Home() {
   return (
     <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
-      <View>{handeleNoteCreate}</View>
+      <View style={styles.card}>
+        <Text style={styles.annotation}>{isNote}</Text>
+      </View>
     </View>
   );
 }
