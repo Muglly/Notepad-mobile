@@ -10,27 +10,21 @@ export function Home() {
 
   const NoteList = () => {
     try {
-      if (isNote != null || '') {
-        console.log('home console: ', isNote);
-        return (
-          <View style={styles.card}>
-            <Text style={styles.annotation}>{isNote}</Text>
-          </View>
-        );
-      }
+      console.log('home console: ', isNote);
+      return (
+        <View style={styles.card}>
+          <Text style={styles.annotation}>{isNote}</Text>
+        </View>
+      );
     } catch (error) {
       console.log('noteList error: ', error);
     }
   };
 
-  // useEffect(() => {
-  //   console.log('Home isNote: ', isNote);
-  // }, [isNote]);
-
   return (
     <View style={{ flex: 1, backgroundColor: '#cccccc' }}>
       <Header />
-      <NoteList />
+      <FlatList data={isNote} renderItem={() => <NoteList />} />
     </View>
   );
 }
