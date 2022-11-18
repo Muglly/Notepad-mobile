@@ -13,12 +13,13 @@ export function New() {
       return alert('type your note');
     }
     try {
-      setNote('');
+      setNote(isNote);
       alert('Annotation created');
-      console.log(isNote);
     } catch (error) {
       console.log(error);
       alert('Unable to create your annotation.');
+    } finally {
+      setNote('');
     }
   }
 
